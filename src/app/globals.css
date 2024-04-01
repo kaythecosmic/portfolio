@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,12 +24,25 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #252525;
+}
+
+@layer base {
+  :root {
+    --text: #0f0f0f;
+    --background: #d9d9d9;
+    --primary: #831113;
+    --secondary: #66d3eb;
+    --accent: #521ad5;
+  }
+
+  .dark {
+    --text: #efefef;
+    --background: #252525;
+    --primary: #ee7b7d;
+    --secondary: #14839b;
+    --accent: #6229e4;
+  }
 }
 
 @layer utilities {
